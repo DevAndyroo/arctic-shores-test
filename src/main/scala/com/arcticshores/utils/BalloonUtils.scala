@@ -14,7 +14,7 @@ object BalloonUtils {
       case "inflate" =>
         val newBalloon = balloon.copy(fill = balloon.fill + 1)
         if (newBalloon.fill > newBalloon.size) {
-          println("BURST!")
+          println("BURST")
           newBalloon
         } else {
           processBalloon(newBalloon)

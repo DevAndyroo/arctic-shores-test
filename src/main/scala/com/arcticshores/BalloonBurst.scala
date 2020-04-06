@@ -7,18 +7,22 @@ import scala.io.StdIn
 
 object BalloonBurst extends App {
 
-  println("Please enter balloon values:")
+  def run() = {
+    println("Please enter balloon values:")
 
-  val balloonsInput = StdIn.readLine()
+    val balloonsInput = StdIn.readLine()
 
-  val splitInput = BalloonUtils.splitInput(balloonsInput)
+    val splitInput = BalloonUtils.splitInput(balloonsInput)
 
-  val balloons = splitInput.map(x => Balloon(x))
+    val balloons = splitInput.map(x => Balloon(x))
 
-  val completedBalloons = balloons.map(BalloonUtils.processBalloon)
+    val completedBalloons = balloons.map(BalloonUtils.processBalloon)
 
-  val score = BalloonUtils.sumBalloons(completedBalloons)
+    val score = BalloonUtils.sumBalloons(completedBalloons)
 
-  println(s"SCORE: $score")
+    println(s"SCORE: $score")
+  }
+
+  this.run()
 
 }
